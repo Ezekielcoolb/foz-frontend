@@ -11,11 +11,12 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: white;
-    padding: 20px 80px;
-    margin-bottom: 80px;
+    background: linear-gradient(to right, #212526 50%, #2e3233 50%);
+    padding: 10px 80px;
+    margin-bottom: 40px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.06);
     z-index: 1000; /* Ensure it appears above other content */
+    color: white;
 }
 
     #navbar {
@@ -36,7 +37,7 @@ nav {
         text-decoration: none;
         font-size: 1.1rem;
         font-weight: 600;
-        color: black;
+        color: #d3cccc;
         transition: 0.3s ease-in-out
        
     }
@@ -67,13 +68,14 @@ nav {
         display: none;
     }
     .nav-mobile {
-        color: black;
+        color: white;
         align-items: center;
     }
 
     @media (max-width: 900px)  {
         nav {
             flex-direction: row-reverse;
+            padding: 10px 20px !important;
         }
         #navbar {
             display: flex;
@@ -125,10 +127,11 @@ const Nav = () => {
         setClicked(!clicked); // Toggle the clicked state
     };
     return (
-        <div>
+        <div >
             <Wraper>
             <nav>
-                <div style={{alignItems: "center"}} className="flex justify-around">
+                <a style={{textDecoration: "none", color: "white"}} href="/">
+                <div style={{alignItems: "center"}} className="d-flex justify-content-around">
                 <div className="mr-2" style={{ height: "70px", width: "70px" }}>
                     <img style={{
                         height: "100%", width: "100%", objectFit: "cover",
@@ -141,11 +144,12 @@ const Nav = () => {
                     
                 </div>
                 </div>
+                </a>
                 <div >
                     <ul id="navbar" className={clicked? "#navbar active" : "#navbar"}>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">Products</a></li>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/Services">Services</a></li>
+                        <li><a href="/gallery">Gallery</a></li>
                         <li><a href="#">Contact</a></li>
                     </ul>
                 </div>
@@ -154,6 +158,7 @@ const Nav = () => {
                     </div>
             </nav>
             </Wraper>
+            <div style={{marginTop: "90px"}}></div>
         </div>
     )
 }

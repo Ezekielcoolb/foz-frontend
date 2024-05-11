@@ -1,6 +1,7 @@
 import { useRoutes } from "react-router-dom";
 import General from "../Layouts/General/generalLayout";
 import Home from "../Component/Home";
+import About from "../Component/About";
 
 export default function Routes(){
     return(
@@ -10,7 +11,8 @@ export default function Routes(){
                     path: "/",
                     element: <General/>,
                     children: [
-                        {path: "/" , element: ''},
+                        {path: "/" , element: <Home />},
+                        {path: "/about" , element: <About />},
 
                     ]
                 },
